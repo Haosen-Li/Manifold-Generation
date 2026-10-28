@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite the relevant method papers listed in CITATION.bib."
+title: "Manifold Gen"
+type: software
+version: 0.1.0
+authors:
+  - name: "Manifold Gen contributors"
+abstract: "Composable Oracle Noise, SAMG, and Z²-Sampling for image and video generation with Diffusers."
+keywords:
+  - diffusion-models
+  - image-generation
+  - video-generation
+  - inference
+  - classifier-free-guidance

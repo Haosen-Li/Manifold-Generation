@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "manifold-gen"
+version = "0.1.0"
+description = "Composable Oracle Noise, SAMG, and Z²-Sampling for Diffusers"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Manifold Gen contributors"}]
+dependencies = ["torch>=2.2", "diffusers==0.35.1", "transformers>=4.44,<4.56", "accelerate>=0.30", "safetensors>=0.4", "Pillow>=10"]
+
+[project.optional-dependencies]
+video = ["imageio[ffmpeg]>=2.34"]
+text = ["sentencepiece>=0.2", "protobuf>=4"]
+dev = ["pytest>=8", "ruff>=0.9", "build>=1.2"]
+data = ["pandas>=2", "pyarrow>=15"]
+
+[project.scripts]
+manifold-gen = "manifold_gen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
+
